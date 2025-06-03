@@ -1,0 +1,32 @@
+// LandFlow SaaS MVP Starter
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Sidebar } from "./components/Sidebar";
+import { Dashboard } from "./pages/Dashboard";
+import { Clients } from "./pages/Clients";
+import { Jobs } from "./pages/Jobs";
+import { Calendar } from "./pages/Calendar";
+import { Invoices } from "./pages/Invoices";
+import { Login } from "./pages/Login";
+import { Signup } from "./pages/Signup";
+
+export default function App() {
+  return (
+    <Router>
+      <div className="flex h-screen">
+        <Sidebar />
+        <main className="flex-1 overflow-y-auto p-4">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/jobs" element={<Jobs />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/invoices" element={<Invoices />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+}
